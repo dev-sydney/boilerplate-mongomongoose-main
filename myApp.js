@@ -1,9 +1,17 @@
 require('dotenv').config();
-
+const mongoose = require('mongoose');
+const connectionString = process.env.MONGO_URI.replace(
+  '<password>',
+  process.env.DB_PASSWORD
+);
+mongoose.connect(connectionString, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
 let Person;
 
-const createAndSavePerson = (done) => {
+const createAndSavePerson = done => {
   done(null /*, data*/);
 };
 
@@ -24,7 +32,7 @@ const findPersonById = (personId, done) => {
 };
 
 const findEditThenSave = (personId, done) => {
-  const foodToAdd = "hamburger";
+  const foodToAdd = 'hamburger';
 
   done(null /*, data*/);
 };
@@ -39,14 +47,14 @@ const removeById = (personId, done) => {
   done(null /*, data*/);
 };
 
-const removeManyPeople = (done) => {
-  const nameToRemove = "Mary";
+const removeManyPeople = done => {
+  const nameToRemove = 'Mary';
 
   done(null /*, data*/);
 };
 
-const queryChain = (done) => {
-  const foodToSearch = "burrito";
+const queryChain = done => {
+  const foodToSearch = 'burrito';
 
   done(null /*, data*/);
 };
