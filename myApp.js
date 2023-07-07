@@ -15,7 +15,6 @@ const personSchema = new mongoose.Schema({
   },
   age: {
     type: Number,
-    required: true,
   },
   favouriteFoods: {
     type: [String],
