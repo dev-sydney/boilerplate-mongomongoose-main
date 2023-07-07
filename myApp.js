@@ -9,16 +9,9 @@ mongoose.connect(connectionString, {
   useUnifiedTopology: true,
 });
 const personSchema = new mongoose.Schema({
-  name: {
-    type: String,
-    required: true,
-  },
-  age: {
-    type: Number,
-  },
-  favouriteFoods: {
-    type: [String],
-  },
+  name: String,
+  age: Number,
+  favouriteFoods: [String],
 });
 
 let Person = mongoose.model('Person', personSchema);
