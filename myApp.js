@@ -8,8 +8,21 @@ mongoose.connect(connectionString, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
+const personSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true,
+  },
+  age: {
+    type: Number,
+    required: true,
+  },
+  favouriteFoods: {
+    type: [String],
+  },
+});
 
-let Person;
+let Person = mongoose.model('Person', personSchema);
 
 const createAndSavePerson = done => {
   done(null /*, data*/);
